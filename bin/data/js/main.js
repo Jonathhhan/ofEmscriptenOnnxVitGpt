@@ -72,9 +72,9 @@ async function getRgbData(textureID, textureWidth, textureHeight) {
 		if(!rgbData[0][y]) rgbData[0][y] = [];
 		if(!rgbData[1][y]) rgbData[1][y] = [];
 		if(!rgbData[2][y]) rgbData[2][y] = [];
-		rgbData[0][y][x] = d[i+0]/255;
-		rgbData[1][y][x] = d[i+1]/255;
-		rgbData[2][y][x] = d[i+2]/255;
+		rgbData[0][y][x] = imageData.data[i+0]/255;
+		rgbData[1][y][x] = imageData.data[i+1]/255;
+		rgbData[2][y][x] = imageData.data[i+2]/255;
 		// From CLIP repo: Normalize(mean=(0.48145466, 0.4578275, 0.40821073), std=(0.26862954, 0.26130258, 0.27577711))
 		rgbData[0][y][x] = (rgbData[0][y][x] - 0.48145466) / 0.26862954;
 		rgbData[1][y][x] = (rgbData[1][y][x] - 0.4578275) / 0.26130258;
