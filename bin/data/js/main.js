@@ -66,8 +66,7 @@ async function getRgbData(textureID, textureWidth, textureHeight) {
 	const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 	var rgbData = [[], [], []]; // [r, g, b]
 	// remove alpha and put into correct shape:
-	const d = imageData.data;
-        for(var i = 0; i < d.length; i += 4) { 
+        for(var i = 0; i < imageData.data.length; i += 4) { 
 		var x = (i/4) % canvas.width;
 		var y = Math.floor((i/4) / canvas.width)
 		if(!rgbData[0][y]) rgbData[0][y] = [];
