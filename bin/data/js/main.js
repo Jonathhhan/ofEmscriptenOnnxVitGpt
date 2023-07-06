@@ -1,4 +1,4 @@
-var onnxDecoderSession;
+var onnxEncoderSession, onnxDecoderSession;
 var calls = 0;
 
 startOnnxSession = async function() {
